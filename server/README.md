@@ -30,3 +30,11 @@ git remote add origin git@github.com:viktishchenko/MySQL-CRUD2.git
 git push origin master
 
 ```
+
+### create post
+
+![](readmeAssets/CreatePosts-postMethod.png)
+
+### get all posts
+
+![](readmeAssets/getAllPost-getMethod.png)
