@@ -3,6 +3,7 @@ const app = express()
 const postRouter = require("./routes/Posts")
 
 const PORT = 8800
+app.use(express.json())
 const db = require("./models")
 
 /* // test route
