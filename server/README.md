@@ -33,8 +33,8 @@ git push origin master
 
 ### create post
 
-![](readmeAssets/CreatePosts-postMethod.png)
+![create-post](readmeAssets/CreatePosts-postMethod.png)
 
 ### get all posts
 
-![](readmeAssets/getAllPost-getMethod.png)
+![get all posts](readmeAssets/getAllPost-getMethod.png)

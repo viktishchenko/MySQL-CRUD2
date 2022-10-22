@@ -14,3 +14,7 @@ npx create-react-app .
 ```javascript
 npm i axios
 ```
+
+### add post render with basic css
+
+![post render](readmeAssets/posts-render.png)
