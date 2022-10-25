@@ -29,3 +29,11 @@ npm i reacr-router-dom
 
 ![add routes](readmeAssets/add-routes-start.png)
 ![add routes](readmeAssets/add-routes.png)
+
+### add formik
+
+```javascript
+npm i formik
+```
+
+![add formik](readmeAssets/add-formik.png)
