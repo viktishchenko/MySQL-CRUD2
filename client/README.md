@@ -18,3 +18,14 @@ npm i axios
 ### add post render with basic css
 
 ![post render](readmeAssets/posts-render.png)
+
+### add react-router-dom
+
+```javascript
+npm i reacr-router-dom
+```
+
+### check links
+
+![add routes](readmeAssets/add-routes-start.png)
+![add routes](readmeAssets/add-routes.png)
