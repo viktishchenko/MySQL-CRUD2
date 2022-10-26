@@ -13,18 +13,19 @@ const Home = () => {
     });
   }, []);
   return (
-    <div>
+    <div className="homePage">
       <Link to={"/createpost"}>Create A Post</Link>
-
-      {listOfPosts.map((post) => {
-        return (
-          <div className="post" key={post.id}>
-            <div className="title">{post.title}</div>
-            <div className="body">{post.postText}</div>
-            <div className="footer">{post.username}</div>
-          </div>
-        );
-      })}
+      <div className="postContainer">
+        {listOfPosts.map((post) => {
+          return (
+            <div className="post" key={post.id}>
+              <div className="title">{post.title}</div>
+              <div className="body">{post.postText}</div>
+              <div className="footer">{post.username}</div>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };

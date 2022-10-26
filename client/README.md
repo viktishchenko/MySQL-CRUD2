@@ -37,3 +37,11 @@ npm i formik
 ```
 
 ![add formik](readmeAssets/add-formik.png)
+
+### add yup form validator
+
+```javascript
+npm i yup
+```
+
+![create post functionality](readmeAssets/create-post-functionality.png)

@@ -2,15 +2,42 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
+import axios from "axios";
 
 const CreatePost = () => {
+  const initialValues = {
+    title: "",
+    postText: "",
+    username: "",
+  };
+
+  const validationSchema = Yup.object().shape({
+    title: Yup.string().required("You must input a Title!"),
+    postText: Yup.string().required(),
+    username: Yup.string().min(3).max(15).required(),
+  });
+
+  const onSubmit = (data) => {
+    axios.post("http://localhost:8800/posts", data).then((res) => {
+      console.log("it's work!");
+    });
+  };
+
   return (
     <div className="createPostPage">
-      <h1>Create Post</h1>
-      <Link style={{ margin: "20px 0", display: "block" }} to={"/"}>
+      <h1 style={{ textAlign: "center" }}>Create Post</h1>
+      <Link
+        style={{ textAlign: "center", margin: "20px 0", display: "block" }}
+        to={"/"}
+      >
         back →
       </Link>
-      <Formik>
+      <Formik
+        initialValues={initialValues}
+        onSubmit={onSubmit}
+        validationSchema={validationSchema}
+      >
         <Form className="formContainer">
           <label>Title: </label>
           <ErrorMessage name="title" component="span" />

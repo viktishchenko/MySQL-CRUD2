@@ -1,15 +1,18 @@
-.App {
-  width: 100vw;
-  height: auto;
-  display: flex;
-  align-items: center;
-  padding-top: 40px;
-  flex-direction: column;
-}
-
 body {
   margin: 0;
   padding: 0;
+}
+
+.homePage {
+  margin: 0 auto;
+  max-width: 400px;
+  padding: 10px;
+}
+
+.postContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .post {
@@ -32,16 +35,17 @@ body {
 .title {
   flex: 20%;
   border-bottom: 1px solid lightgray;
-  background-color: #3e82c4;
   display: grid;
   place-content: center;
   color: white;
+  background-color: dodgerblue;
 }
 
 .body {
   flex: 60%;
   display: grid;
   place-content: center;
+  padding: 15px;
 }
 
 .footer {
@@ -50,8 +54,8 @@ body {
   display: flex;
   align-items: center;
   padding-left: 15px;
-  background-color: #3e82c4;
   color: white;
+  background-color: dodgerblue;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
@@ -60,7 +64,7 @@ body {
 
 .createPostPage {
   font-family: Arial, Helvetica, sans-serif;
-  width: 100vw;
+  padding: 15px;
 }
 .formContainer {
   display: flex;
