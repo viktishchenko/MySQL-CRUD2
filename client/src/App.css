@@ -1,12 +1,33 @@
 body {
   margin: 0;
   padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+  background-color: dodgerblue;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.navbar a + a {
+  margin-left: 20px;
 }
 
 .homePage {
   margin: 0 auto;
   max-width: 400px;
-  padding: 10px;
 }
 
 .postContainer {
@@ -23,7 +44,6 @@ body {
   flex-direction: column;
   margin-top: 50px;
   border: 1px solid lightgray;
-  font-family: Arial, Helvetica, sans-serif;
 
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
@@ -63,7 +83,6 @@ body {
 /* CREATE POST PAGE CSS */
 
 .createPostPage {
-  font-family: Arial, Helvetica, sans-serif;
   padding: 15px;
 }
 .formContainer {

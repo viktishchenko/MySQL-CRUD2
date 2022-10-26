@@ -1,6 +1,5 @@
 /* rafce */
 import React from "react";
-import { Link } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
@@ -26,13 +25,7 @@ const CreatePost = () => {
 
   return (
     <div className="createPostPage">
-      <h1 style={{ textAlign: "center" }}>Create Post</h1>
-      <Link
-        style={{ textAlign: "center", margin: "20px 0", display: "block" }}
-        to={"/"}
-      >
-        back →
-      </Link>
+      <h1 style={{ textAlign: "center", color: "gray" }}>Create A Post</h1>
       <Formik
         initialValues={initialValues}
         onSubmit={onSubmit}
