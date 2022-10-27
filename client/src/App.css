@@ -28,12 +28,24 @@ body {
 .homePage {
   margin: 0 auto;
   max-width: 400px;
+  padding: 0 15px;
+}
+
+.postPage {
+  margin: 0 auto;
+  max-width: 400px;
+  padding: 15px;
+}
+
+#individual {
+  max-width: 100%;
 }
 
 .postContainer {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  gap: 0 30px;
 }
 
 .post {

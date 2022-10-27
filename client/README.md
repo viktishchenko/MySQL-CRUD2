@@ -71,3 +71,8 @@ export default Post;
 ### get post id fom db
 
 ![specify route](readmeAssets/spcify-route.png)
+
+### get single post from db
+
+![get single post](readmeAssets/single-post.png)
+![single post client](readmeAssets/single-post-client.png)
