@@ -38,3 +38,9 @@ git push origin master
 ### get all posts
 
 ![get all posts](readmeAssets/getAllPost-getMethod.png)
+
+### add comment db & route
+
+```javascript
+
+```
