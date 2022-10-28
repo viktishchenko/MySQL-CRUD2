@@ -12,7 +12,7 @@ const Post = () => {
     axios.get(`http://localhost:8800/posts/${id}`).then((res) => {
       setPost(res.data);
     });
-  }, []);
+  }, [id]);
 
   return (
     <div className="postPage" id="individual">
