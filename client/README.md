@@ -76,3 +76,4 @@ export default Post;
 
 ![get single post](readmeAssets/single-post.png)
 ![single post client](readmeAssets/single-post-client.png)
+![comment section](readmeAssets/single-post-comments.png)

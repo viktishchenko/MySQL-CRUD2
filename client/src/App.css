@@ -2,6 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
+  color: #373737;
 }
 
 .navbar {
@@ -90,6 +91,54 @@ body {
   background-color: dodgerblue;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+}
+
+.commentList {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  place-content: baseline;
+}
+
+.commentContainer {
+  padding-left: 5px;
+}
+
+.commentContainer input[type="text"] {
+  position: relative;
+  padding: 0 10px;
+  margin: 0;
+  top: -1px;
+  line-height: 34px;
+  height: 34px;
+  border: none;
+  width: calc(100% - 90px);
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.speech {
+  position: relative;
+  border-radius: 25px;
+  padding: 10px 16px;
+  background: #f7f7f7;
+  width: calc(100% - 25px);
+  margin-bottom: 5px;
+}
+
+.commentContainer > button {
+  cursor: pointer;
+  position: relative;
+  right: -5px;
+  top: -1px;
+  background: #34495e;
+  border: none;
+  color: white;
+  line-height: 34px;
+  width: 60px;
+  padding: 0;
+  border-radius: 6px;
+  font-size: 15px;
 }
 
 /* CREATE POST PAGE CSS */
