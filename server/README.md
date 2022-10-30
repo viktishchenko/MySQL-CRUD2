@@ -44,3 +44,13 @@ git push origin master
 ### add users model
 
 ![user model](readmeAssets/users-model.png)
+
+### add bcript library
+
+```javascript
+npm i bcrypt
+```
+
+### add auth logic
+
+![auth logic](readmeAssets/auth-logic.png)
