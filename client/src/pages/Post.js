@@ -8,6 +8,7 @@ const Post = () => {
 
   const [post, setPost] = useState({});
   const [comments, setComments] = useState([]);
+  const [newComment, setNewComment] = useState("");
 
   useEffect(() => {
     axios.get(`http://localhost:8800/posts/${id}`).then((res) => {
@@ -19,6 +20,19 @@ const Post = () => {
     });
   }, [id]);
 
+  /* nfn */
+  const addComment = () => {
+    axios
+      .post("http://localhost:8800/comments", {
+        commentBody: newComment,
+        PostId: id,
+      })
+      .then((res) => {
+        const commentToAdd = { commentBody: newComment };
+        setComments([...comments, commentToAdd]);
+      });
+  };
+
   return (
     <div className="postPage" id="individual">
       <div className="postContainer">
@@ -29,11 +43,10 @@ const Post = () => {
         </div>
         <div className="post">
           <div className="title">Comments</div>
-          {/* <div className="body">{post.postText}</div> */}
           <div className="body commentList">
-            {comments.map((comment) => {
+            {comments.map((comment, key) => {
               return (
-                <div className="speech" key={comment.id}>
+                <div className="speech" key={key}>
                   {comment.commentBody}
                 </div>
               );
@@ -44,11 +57,12 @@ const Post = () => {
               type="text"
               autoComplete="off"
               placeholder="Type Something..."
+              onChange={(e) => {
+                setNewComment(e.target.value);
+              }}
             />
-            <button>Send</button>
+            <button onClick={addComment}>Send</button>
           </div>
-          {/* <div className="commentContainer">
-          </div> */}
         </div>
       </div>
     </div>

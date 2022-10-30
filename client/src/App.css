@@ -121,7 +121,7 @@ body {
   position: relative;
   border-radius: 25px;
   padding: 10px 16px;
-  background: #f7f7f7;
+  background: #eee;
   width: calc(100% - 25px);
   margin-bottom: 5px;
 }
