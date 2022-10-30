@@ -41,6 +41,6 @@ git push origin master
 
 ### add comment db & route
 
-```javascript
+### add users model
 
-```
+![user model](readmeAssets/users-model.png)
