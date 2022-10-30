@@ -76,4 +76,9 @@ export default Post;
 
 ![get single post](readmeAssets/single-post.png)
 ![single post client](readmeAssets/single-post-client.png)
-![comment section](readmeAssets/single-post-comments.png)
+
+<!-- Shift + Alt + A → Alt + 26 → Ctrl + Space → code -->
+
+### add comment section with logic & styles
+
+![add comment section](readmeAssets/add-comment-logic.png)
