@@ -82,3 +82,7 @@ export default Post;
 ### add comment section with logic & styles
 
 ![add comment section](readmeAssets/add-comment-logic.png)
+
+### add registration
+
+![registration form](readmeAssets/add-registration.png)

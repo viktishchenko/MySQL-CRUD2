@@ -10,7 +10,8 @@ body {
   height: 70px;
   display: flex;
   align-items: center;
-  padding-left: 20px;
+  padding: 0 10px;
+  justify-content: space-between;
 }
 
 .navbar a {
@@ -26,6 +27,17 @@ body {
   margin-left: 20px;
 }
 
+.container {
+  width: 1170px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.user,
+.link {
+  display: flex;
+}
 .homePage {
   margin: 0 auto;
   max-width: 400px;
