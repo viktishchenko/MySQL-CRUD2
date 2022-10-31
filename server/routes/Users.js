@@ -14,4 +14,40 @@ router.post("/", async (req, res) => {
   });
 });
 
+// router.post("/login", async (req, res) => {
+//   const { username, password } = req.body;
+
+//   const user = await Users.findOne({ where: { username: username } });
+
+//   if (!user) {
+//     res.json({ error: "User does not exist" });
+//   } else {
+//     bcrypt.compare(password, user.password).then((match) => {
+//       if (!match) {
+//         res.json({ error: "Wrong username and password combination" });
+//       } else {
+//         res.json("You logged in!");
+//       }
+//     });
+//   }
+// });
+
+router.post("/login", async (req, res) => {
+  const { username, password } = req.body;
+  // check if user exists
+  const user = await Users.findOne({ where: { username: username } });
+  if (!user) {
+    res.json({ error: "User Doesn't Exist" });
+  } else {
+    // check password
+    const match = await bcrypt.compare(password, user.password);
+    //     console.log("match", match);
+    if (match) {
+      res.json("You Logged In!!!");
+    } else {
+      res.json({ error: "Wrong Username And Password Combination" });
+    }
+  }
+});
+
 module.exports = router;

@@ -54,3 +54,7 @@ npm i bcrypt
 ### add auth logic
 
 ![auth logic](readmeAssets/auth-logic.png)
+
+### check user/password
+
+![check user or password](readmeAssets/check-password.png)
