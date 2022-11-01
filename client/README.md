@@ -85,4 +85,4 @@ export default Post;
 
 ### add registration
 
-![registration form](readmeAssets/add-registration.png)
+![login form in action](readmeAssets/login-info.png)

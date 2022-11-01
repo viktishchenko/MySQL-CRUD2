@@ -22,8 +22,8 @@ const Registration = () => {
   };
 
   return (
-    <div style={{ paddingTop: "20px" }}>
-      {" "}
+    <div className="registrationPage">
+      <h1 style={{ textAlign: "center" }}>Registration</h1>
       <Formik
         initialValues={initialValues}
         onSubmit={onSubmit}

@@ -198,6 +198,11 @@ span {
   color: red;
 }
 
+.loginForm,
+.registrationPage {
+  padding: 0 10px;
+}
+
 .loginForm input {
   height: 40px;
   margin-top: 10px;
