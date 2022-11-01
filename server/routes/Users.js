@@ -3,6 +3,8 @@ const router = express.Router();
 const { Users } = require("../models");
 const bcrypt = require("bcrypt");
 
+const { sign } = require("jsonwebtoken");
+
 router.post("/", async (req, res) => {
   const { username, password } = req.body;
   bcrypt.hash(password, 10).then((hash) => {
@@ -43,7 +45,12 @@ router.post("/login", async (req, res) => {
     const match = await bcrypt.compare(password, user.password);
     //     console.log("match", match);
     if (match) {
-      res.json("You Logged In!!!");
+      // create jwt token
+      const accessToken = sign(
+        { username: user.username, id: user.id },
+        "verySecretString"
+      );
+      res.json(accessToken);
     } else {
       res.json({ error: "Wrong Username And Password Combination" });
     }

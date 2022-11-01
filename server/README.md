@@ -58,3 +58,11 @@ npm i bcrypt
 ### check user/password
 
 ![check user or password](readmeAssets/check-password.png)
+
+### add jwt
+
+```javascript
+npm i jsonwebtoken
+```
+
+![add jwt](readmeAssets/add-jwt.png)
