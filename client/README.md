@@ -86,3 +86,7 @@ export default Post;
 ### add registration
 
 ![login form in action](readmeAssets/login-info.png)
+
+### add authorship for comments
+
+![add authorship for comments](readmeAssets/auth-comment.png)

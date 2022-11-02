@@ -138,6 +138,18 @@ body {
   margin-bottom: 5px;
 }
 
+.speech::after {
+  position: absolute;
+  display: block;
+  content: " ";
+  border: 12px solid transparent;
+  border-bottom-color: transparent;
+  border-bottom-color: #eee;
+  bottom: 10px;
+  left: -12px;
+  border-radius: 6px;
+}
+
 .commentContainer > button {
   cursor: pointer;
   position: relative;
@@ -194,7 +206,7 @@ body {
   background-color: dodgerblue;
 }
 
-span {
+.formContainer > span {
   color: red;
 }
 

@@ -2,9 +2,12 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+// import { useNavigate} from "react-router-dom";
 
 const Post = () => {
   let { id } = useParams();
+
+  // const navigate = useNavigate();
 
   const [post, setPost] = useState({});
   const [comments, setComments] = useState([]);
@@ -38,6 +41,8 @@ const Post = () => {
       .then((res) => {
         if (res.data.error) {
           console.log(res.data.error);
+          alert("You need to login!");
+          // navigate("/login");
         } else {
           const commentToAdd = { commentBody: newComment };
           setComments([...comments, commentToAdd]);
@@ -61,6 +66,8 @@ const Post = () => {
               return (
                 <div className="speech" key={key}>
                   {comment.commentBody}
+                  <br />
+                  <tt>from: {comment.username}</tt>
                 </div>
               );
             })}
