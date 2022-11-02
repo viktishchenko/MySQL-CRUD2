@@ -40,11 +40,13 @@ function App() {
                 <Link to="/createpost">Create A Post</Link>
               </div>
               <div className="user">
-                {!authState && (
+                {!authState ? (
                   <>
                     <Link to="/login">Login</Link>
                     <Link to="/registration">Registration</Link>
                   </>
+                ) : (
+                  <button className="logOut">Logout</button>
                 )}
               </div>
             </div>

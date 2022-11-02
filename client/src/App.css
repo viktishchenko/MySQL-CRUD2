@@ -27,6 +27,16 @@ body {
   margin-left: 20px;
 }
 
+.logOut {
+  cursor: pointer;
+  background: #34495e;
+  border: none;
+  color: white;
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
 .container {
   width: 1170px;
   display: flex;
@@ -37,6 +47,11 @@ body {
 .user,
 .link {
   display: flex;
+}
+
+.user {
+  justify-content: center;
+  align-items: center;
 }
 .homePage {
   margin: 0 auto;
