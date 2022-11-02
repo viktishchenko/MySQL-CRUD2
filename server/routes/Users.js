@@ -5,6 +5,8 @@ const bcrypt = require("bcrypt");
 
 const { sign } = require("jsonwebtoken");
 
+const { validateToken } = require("../middlewares/AuthMiddleware");
+
 router.post("/", async (req, res) => {
   const { username, password } = req.body;
   bcrypt.hash(password, 10).then((hash) => {
@@ -55,6 +57,11 @@ router.post("/login", async (req, res) => {
       res.json({ error: "Wrong Username And Password Combination" });
     }
   }
+});
+
+//check valid token
+router.get("/auth", validateToken, (req, res) => {
+  res.json(req.user);
 });
 
 module.exports = router;

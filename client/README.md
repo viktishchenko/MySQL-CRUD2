@@ -90,3 +90,7 @@ export default Post;
 ### add authorship for comments
 
 ![add authorship for comments](readmeAssets/auth-comment.png)
+
+### check access token(wierd?)
+
+![check access token](readmeAssets/check-access.png)
