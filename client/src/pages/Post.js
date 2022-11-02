@@ -44,7 +44,10 @@ const Post = () => {
           alert("You need to login!");
           // navigate("/login");
         } else {
-          const commentToAdd = { commentBody: newComment };
+          const commentToAdd = {
+            commentBody: newComment,
+            username: res.data.username,
+          };
           setComments([...comments, commentToAdd]);
           setNewComment("");
         }
