@@ -59,8 +59,8 @@ router.post("/login", async (req, res) => {
   }
 });
 
-//check valid token
-router.get("/auth", validateToken, (req, res) => {
+//check valid token endpoint
+router.get("/check", validateToken, (req, res) => {
   res.json(req.user);
 });
 

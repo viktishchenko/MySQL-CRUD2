@@ -15,7 +15,7 @@ function App() {
   const [authState, setAuthState] = useState(false);
   useEffect(() => {
     axios
-      .get("http://localhost:8800/auth/auth", {
+      .get("http://localhost:8800/auth/check", {
         headers: {
           accessToken: localStorage.getItem("accessToken"),
         },
@@ -28,6 +28,11 @@ function App() {
         }
       });
   }, []);
+
+  const logout = () => {
+    localStorage.removeItem("accessToken");
+    setAuthState(false);
+  };
 
   return (
     <div className="App">
@@ -46,7 +51,9 @@ function App() {
                     <Link to="/registration">Registration</Link>
                   </>
                 ) : (
-                  <button className="logOut">Logout</button>
+                  <button className="logOut" onClick={logout}>
+                    Logout
+                  </button>
                 )}
               </div>
             </div>
