@@ -1,8 +1,9 @@
 /* rafce */
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 // import { useNavigate} from "react-router-dom";
+import { AuthContext } from "../helpers/AuthContext";
 
 const Post = () => {
   let { id } = useParams();
@@ -12,6 +13,8 @@ const Post = () => {
   const [post, setPost] = useState({});
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState("");
+
+  const { authState } = useContext(AuthContext);
 
   useEffect(() => {
     axios.get(`http://localhost:8800/posts/${id}`).then((res) => {
@@ -54,6 +57,20 @@ const Post = () => {
       });
   };
 
+  const deleteComment = (id) => {
+    axios
+      .delete(`http://localhost:8800/comments/${id}`, {
+        headers: { accessToken: localStorage.getItem("accessToken") },
+      })
+      .then(() => {
+        setComments(
+          comments.filter((comment) => {
+            return comment.id !== id;
+          })
+        );
+      });
+  };
+
   return (
     <div className="postPage" id="individual">
       <div className="postContainer">
@@ -70,7 +87,19 @@ const Post = () => {
                 <div className="speech" key={key}>
                   {comment.commentBody}
                   <br />
-                  <tt>from: {comment.username}</tt>
+                  <div className="userInfo">
+                    <tt>from: {comment.username}</tt>
+                    {authState.username === comment.username && (
+                      <button
+                        onClick={() => {
+                          deleteComment(comment.id);
+                        }}
+                        title="Delete Comment"
+                      >
+                        x
+                      </button>
+                    )}
+                  </div>
                 </div>
               );
             })}

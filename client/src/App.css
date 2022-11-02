@@ -53,6 +53,18 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+.userInfo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.userInfo > button {
+  color: #34495e;
+  border-radius: 4px;
+  border: none;
+}
+
 .homePage {
   margin: 0 auto;
   max-width: 400px;
