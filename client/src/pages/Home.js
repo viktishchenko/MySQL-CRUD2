@@ -24,6 +24,17 @@ const Home = () => {
       )
       .then((res) => {
         alert(res.data);
+        // add update like post logic
+        setListOfPosts(
+          listOfPosts.map((post) => {
+            if (post.id === postId) {
+              // change Likes array (only length thatswhay0)
+              return { ...post, Likes: [...post.Likes, 0] };
+            } else {
+              return post;
+            }
+          })
+        );
       });
   };
 
@@ -51,6 +62,7 @@ const Home = () => {
                 >
                   Like
                 </button>
+                <label>{post.Likes.length}</label>
               </div>
             </div>
           );
