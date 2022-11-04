@@ -66,3 +66,7 @@ npm i jsonwebtoken
 ```
 
 ![add jwt](readmeAssets/add-jwt.png)
+
+### add likes db model & route
+
+![likes route & model](readmeAssets/likes-model-and-route.png)
