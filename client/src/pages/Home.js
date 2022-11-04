@@ -23,13 +23,19 @@ const Home = () => {
         { headers: { accessToken: localStorage.getItem("accessToken") } }
       )
       .then((res) => {
-        alert(res.data);
         // add update like post logic
         setListOfPosts(
           listOfPosts.map((post) => {
             if (post.id === postId) {
-              // change Likes array (only length thatswhay0)
-              return { ...post, Likes: [...post.Likes, 0] };
+              if (res.data.liked) {
+                // change Likes array (only length thatswhay0)
+                return { ...post, Likes: [...post.Likes, 0] };
+              } else {
+                // just remove last element
+                const likesArray = post.Likes;
+                likesArray.pop();
+                return { ...post, Likes: likesArray };
+              }
             } else {
               return post;
             }

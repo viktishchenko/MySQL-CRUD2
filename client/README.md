@@ -94,3 +94,7 @@ export default Post;
 ### check access token(wierd?)
 
 ![check access token](readmeAssets/check-access.png)
+
+### add likes functionality
+
+![likes functionality](readmeAssets/add-like-system.png)
