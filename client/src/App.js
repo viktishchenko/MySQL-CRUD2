@@ -57,6 +57,9 @@ function App() {
                 <Link to="/createpost">Create A Post</Link>
               </div>
               <div className="user">
+                <p style={{ color: "white", marginRight: "8px" }}>
+                  {authState.username}
+                </p>
                 {!authState.status ? (
                   <>
                     <Link to="/login">Login</Link>
@@ -67,9 +70,6 @@ function App() {
                     Logout
                   </button>
                 )}
-                <p style={{ color: "white", marginLeft: "5px" }}>
-                  {authState.username}
-                </p>
               </div>
             </div>
           </div>

@@ -29,10 +29,10 @@ body {
 
 .logOut {
   cursor: pointer;
-  background: #34495e;
+  background: #fff;
   border: none;
-  color: white;
-  padding: 8px 10px;
+  color: #34495e;
+  padding: 4px 6px;
   border-radius: 6px;
   font-size: 15px;
 }
