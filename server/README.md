@@ -70,3 +70,7 @@ npm i jsonwebtoken
 ### add likes db model & route
 
 ![likes route & model](readmeAssets/likes-model-and-route.png)
+
+### add likeArray to the Post
+
+![add like array to post](readmeAssets/add-likeArray-to-post.png)
