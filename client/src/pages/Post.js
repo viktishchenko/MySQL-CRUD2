@@ -2,13 +2,13 @@
 import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-// import { useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../helpers/AuthContext";
 
 const Post = () => {
   let { id } = useParams();
 
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const [post, setPost] = useState({});
   const [comments, setComments] = useState([]);
@@ -71,6 +71,18 @@ const Post = () => {
       });
   };
 
+  const deletePost = (id) => {
+    axios
+      .delete(`http://localhost:8800/posts/${id}`, {
+        headers: {
+          accessToken: localStorage.getItem("accessToken"),
+        },
+      })
+      .then(() => {
+        navigate("/");
+      });
+  };
+
   return (
     <div className="postPage" id="individual">
       <div className="postContainer">
@@ -81,7 +93,13 @@ const Post = () => {
             <div className="postInfo">
               {post.username}
               {authState.username === post.username && (
-                <button>Delete post</button>
+                <button
+                  onClick={() => {
+                    deletePost(post.id);
+                  }}
+                >
+                  Delete post
+                </button>
               )}
             </div>
           </div>

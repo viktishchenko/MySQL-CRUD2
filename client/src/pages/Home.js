@@ -1,20 +1,20 @@
 /* rafce */
-import React, { useContext } from "react";
+import React from "react";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
-import { AuthContext } from "../helpers/AuthContext";
+// import { AuthContext } from "../helpers/AuthContext";
 
 const Home = () => {
   const [listOfPosts, setListOfPosts] = useState([]);
   const [likedPosts, setLikedPosts] = useState([]);
-  const { authState } = useContext(AuthContext);
+  // const { authState } = useContext(AuthContext);
 
   let navigate = useNavigate();
 
   useEffect(() => {
-    if (!authState.status) {
+    if (!localStorage.getItem("accessToken")) {
       navigate("/login");
     } else {
       axios
@@ -30,7 +30,7 @@ const Home = () => {
           );
         });
     }
-  }, []);
+  }, [navigate]);
 
   const likePost = (postId) => {
     axios

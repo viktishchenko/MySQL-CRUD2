@@ -111,3 +111,7 @@ npm install @mui/icons-material --legacy-peer-deps
 ### colorize liked post with page update
 
 ![colorize liked posts](readmeAssets/colorize-liked-posts.png)
+
+### delete post functionality
+
+![delete post logic](readmeAssets/delete-post.png)
