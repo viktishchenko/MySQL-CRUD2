@@ -16,8 +16,10 @@ router.get("/:id", async (req, res) => {
   res.json(post);
 });
 
-router.post("/", async (req, res) => {
+router.post("/", validateToken, async (req, res) => {
   const post = req.body;
+  // add new element post object
+  post.username = req.user.username;
   await Posts.create(post);
   res.json(post);
 });

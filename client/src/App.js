@@ -52,25 +52,27 @@ function App() {
         <BrowserRouter>
           <div className="navbar">
             <div className="container">
-              <div className="link">
-                <Link to="/">Home Page</Link>
-                <Link to="/createpost">Create A Post</Link>
-              </div>
-              <div className="user">
-                <p style={{ color: "white", marginRight: "8px" }}>
-                  {authState.username}
-                </p>
-                {!authState.status ? (
-                  <>
-                    <Link to="/login">Login</Link>
-                    <Link to="/registration">Registration</Link>
-                  </>
-                ) : (
-                  <button className="logOut" onClick={logout}>
-                    Logout
-                  </button>
-                )}
-              </div>
+              {!authState.status ? (
+                <div className="userStart">
+                  <Link to="/login">Login</Link>
+                  <Link to="/registration">Registration</Link>
+                </div>
+              ) : (
+                <>
+                  <div className="link">
+                    <Link to="/">Home Page</Link>
+                    <Link to="/createpost">Create A Post</Link>
+                  </div>
+                  <div className="user">
+                    <p style={{ color: "white", marginRight: "8px" }}>
+                      {authState.username}
+                    </p>
+                    <button className="logOut" onClick={logout}>
+                      Logout
+                    </button>
+                  </div>
+                </>
+              )}
             </div>
           </div>
           <Routes>

@@ -77,7 +77,14 @@ const Post = () => {
         <div className="post">
           <div className="title">{post.title}</div>
           <div className="body">{post.postText}</div>
-          <div className="footer">{post.username}</div>
+          <div className="footer">
+            <div className="postInfo">
+              {post.username}
+              {authState.username === post.username && (
+                <button>Delete post</button>
+              )}
+            </div>
+          </div>
         </div>
         <div className="post">
           <div className="title">Comments</div>

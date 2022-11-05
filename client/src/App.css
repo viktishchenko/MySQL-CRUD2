@@ -114,6 +114,12 @@ body {
   cursor: default !important;
 }
 
+.userStart {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .body {
   flex: 60%;
   display: grid;
@@ -277,4 +283,10 @@ body {
   border-radius: 5px;
   padding-left: 10px;
   font-size: 20px;
+}
+
+.postInfo {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
