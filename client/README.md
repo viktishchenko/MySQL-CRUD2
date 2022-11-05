@@ -98,3 +98,12 @@ export default Post;
 ### add likes functionality
 
 ![likes functionality](readmeAssets/add-like-system.png)
+
+### add material ui
+
+```javascript
+npm install @mui/material @emotion/react @emotion/styled --legacy-peer-deps
+npm install @mui/icons-material --legacy-peer-deps
+```
+
+![like button](readmeAssets/add-material-ui-icons.png)
