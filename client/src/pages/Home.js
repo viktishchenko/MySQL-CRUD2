@@ -7,13 +7,23 @@ import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 
 const Home = () => {
   const [listOfPosts, setListOfPosts] = useState([]);
+  const [likedPosts, setLikedPosts] = useState([]);
 
   let navigate = useNavigate();
 
   useEffect(() => {
-    axios.get("http://localhost:8800/posts").then((res) => {
-      setListOfPosts(res.data);
-    });
+    axios
+      .get("http://localhost:8800/posts", {
+        headers: { accessToken: localStorage.getItem("accessToken") },
+      })
+      .then((res) => {
+        setListOfPosts(res.data.listOfPosts);
+        setLikedPosts(
+          res.data.likedPosts.map((like) => {
+            return like.PostId;
+          })
+        );
+      });
   }, []);
 
   const likePost = (postId) => {
@@ -42,6 +52,16 @@ const Home = () => {
             }
           })
         );
+
+        if (likedPosts.includes(postId)) {
+          setLikedPosts(
+            likedPosts.filter((id) => {
+              return id !== postId;
+            })
+          );
+        } else {
+          setLikedPosts([...likedPosts, postId]);
+        }
       });
   };
 
@@ -67,6 +87,9 @@ const Home = () => {
                     onClick={() => {
                       likePost(post.id);
                     }}
+                    className={
+                      likedPosts.includes(post.id) ? "unlikedBtn" : "likedBtn"
+                    }
                   />
                   <label>{post.Likes.length}</label>
                 </div>

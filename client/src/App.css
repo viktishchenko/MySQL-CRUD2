@@ -151,6 +151,14 @@ body {
   width: 50px;
 }
 
+.likedBtn {
+  fill: currentColor;
+}
+
+.unlikedBtn {
+  fill: #ffd5d5 !important;
+}
+
 .commentList {
   overflow-x: hidden;
   overflow-y: scroll;

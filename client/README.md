@@ -107,3 +107,7 @@ npm install @mui/icons-material --legacy-peer-deps
 ```
 
 ![like button](readmeAssets/add-material-ui-icons.png)
+
+### colorize liked post with page update
+
+![colorize liked posts](readmeAssets/colorize-liked-posts.png)
