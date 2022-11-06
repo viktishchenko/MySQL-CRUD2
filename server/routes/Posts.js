@@ -16,10 +16,18 @@ router.get("/:id", async (req, res) => {
   res.json(post);
 });
 
+router.get("/userPosts/:id", async (req, res) => {
+  const id = req.params.id;
+  const listsOfPosts = await Posts.findAll({ where: { UserId: id } });
+  res.json(listsOfPosts);
+});
+
 router.post("/", validateToken, async (req, res) => {
   const post = req.body;
   // add new element post object
   post.username = req.user.username;
+  // add user id
+  post.UserId = req.user.id;
   await Posts.create(post);
   res.json(post);
 });

@@ -78,3 +78,7 @@ npm i jsonwebtoken
 ### get user info
 
 ![get user info](readmeAssets/get-user-info.png)
+
+### users posts
+
+![user posts](readmeAssets/all-user-posts.png)
