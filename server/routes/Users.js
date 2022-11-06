@@ -64,4 +64,16 @@ router.get("/check", validateToken, (req, res) => {
   res.json(req.user);
 });
 
+//get data about user // anfn
+router.get("/userinfo/:id", async (req, res) => {
+  const id = req.params.id;
+
+  // get users id w/o password
+  const userInfo = await Users.findByPk(id, {
+    attributes: { exclude: ["password"] },
+  });
+
+  res.json(userInfo);
+});
+
 module.exports = router;

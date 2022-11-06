@@ -74,3 +74,7 @@ npm i jsonwebtoken
 ### add likeArray to the Post
 
 ![add like array to post](readmeAssets/add-likeArray-to-post.png)
+
+### get user info
+
+![get user info](readmeAssets/get-user-info.png)
