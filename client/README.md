@@ -115,3 +115,7 @@ npm install @mui/icons-material --legacy-peer-deps
 ### delete post functionality
 
 ![delete post logic](readmeAssets/delete-post.png)
+
+### add profile card
+
+![profile card](readmeAssets/profile-card.png)
