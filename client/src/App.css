@@ -340,3 +340,40 @@ body {
   margin-left: 10px;
   align-items: unset;
 }
+
+.passPage {
+  margin: 20px auto 0;
+  max-width: 400px;
+  padding: 15px;
+  display: grid;
+  grid-gap: 10px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+}
+
+.passPage > input {
+  position: relative;
+  padding: 0 10px;
+  margin: 0;
+  top: -1px;
+  line-height: 34px;
+  height: 34px;
+  width: calc(100% - 90px);
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 300;
+  border: 1px solid #e3e3e3;
+}
+
+.passPage > button {
+  cursor: pointer;
+  background: #34495e;
+  border: none;
+  color: white;
+  line-height: 34px;
+  padding: 0;
+  border-radius: 6px;
+  font-size: 15px;
+  width: calc(100% - 70px);
+}

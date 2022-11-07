@@ -119,3 +119,9 @@ npm install @mui/icons-material --legacy-peer-deps
 ### add profile card with posts/likes counter
 
 ![profile card](readmeAssets/profile-card-new.png)
+
+### add changepass logic & style
+
+![change pass](readmeAssets/change-pass.png)
+
+![change pass page](readmeAssets/change-pass-page.png)
