@@ -9,6 +9,8 @@ const Profile = () => {
   const { id } = useParams(); // get id
   const [username, setUsername] = useState("");
   const [listOfPosts, setListOfPosts] = useState([]);
+  const [likesCount, setLikesCount] = useState("");
+  let postsCount = listOfPosts.length;
 
   // let navigate = useNavigate();
 
@@ -18,6 +20,11 @@ const Profile = () => {
     });
 
     axios.get(`http://localhost:8800/posts/userPosts/${id}`).then((res) => {
+      let c = 0;
+      for (let index = 0; index < res.data.length; index++) {
+        c += res.data[index].Likes.length;
+      }
+      setLikesCount(c);
       setListOfPosts(res.data);
     });
   }, [id]);
@@ -41,9 +48,9 @@ const Profile = () => {
         </div>
         <div className="footer">
           <div className="proinfo">
-            <div className="profilePosts">Posts: 2</div>
+            <div className="profilePosts">Posts: {postsCount}</div>
             <div className="likeContainer profileFooter ">
-              <ThumbUpIcon /> 5
+              <ThumbUpIcon /> {likesCount}
             </div>
           </div>
           <Link to="/">Back →</Link>
