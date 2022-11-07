@@ -36,6 +36,9 @@ const Profile = () => {
           <h1>Username: {username}</h1>
         </div>
         <div className="body profile">
+          <span style={{ fontWeight: "bold", fontSize: "22px" }}>
+            List of posts:
+          </span>
           <ul>
             {listOfPosts.map((post, key) => {
               return (

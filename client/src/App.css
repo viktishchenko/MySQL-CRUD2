@@ -125,6 +125,7 @@ body {
   display: grid;
   place-content: center;
   padding: 15px;
+  cursor: default !important;
 }
 
 .body a {
@@ -321,7 +322,7 @@ body {
   font-weight: bold;
   display: inline-block;
   width: 1em;
-  margin-left: -2em;
+  margin-left: -1em;
   color: dodgerblue;
 }
 

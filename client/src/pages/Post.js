@@ -83,12 +83,39 @@ const Post = () => {
       });
   };
 
+  /* nfn */
+  const editPost = (option) => {
+    if (option === "title") {
+      let newTitle = prompt("Enter new Title:");
+    } else {
+      let newPostText = prompt("Enter new Text:");
+    }
+  };
+
   return (
     <div className="postPage" id="individual">
       <div className="postContainer">
         <div className="post">
-          <div className="title">{post.title}</div>
-          <div className="body">{post.postText}</div>
+          <div
+            onClick={() => {
+              if (authState.username === post.username) {
+                editPost("title");
+              }
+            }}
+            className="title"
+          >
+            {post.title}
+          </div>
+          <div
+            onClick={() => {
+              if (authState.username === post.username) {
+                editPost("body");
+              }
+            }}
+            className="body"
+          >
+            {post.postText}
+          </div>
           <div className="footer">
             <div className="postInfo">
               {post.username}
