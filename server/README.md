@@ -82,3 +82,7 @@ npm i jsonwebtoken
 ### users posts
 
 ![user posts](readmeAssets/all-user-posts.png)
+
+### users posts with likes field
+
+![likes field](readmeAssets/likes-field.png)
