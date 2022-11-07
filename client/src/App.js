@@ -11,6 +11,7 @@ import { AuthContext } from "./helpers/AuthContext";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Profile from "./pages/Profile";
+import ChangePassword from "./pages/ChangePassword";
 
 function App() {
   const [authState, setAuthState] = useState({
@@ -83,6 +84,7 @@ function App() {
             <Route path="*" element={<NotFound />} />
             <Route path="/profile/:id" element={<Profile />} />
             <Route path="/createpost" element={<CreatePost />} />
+            <Route path="/changepassword" element={<ChangePassword />} />
             <Route path="/post/:id" element={<Post />} />
           </Routes>
         </BrowserRouter>

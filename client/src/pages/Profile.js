@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { Link } from "react-router-dom";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
+import { AuthContext } from "../helpers/AuthContext";
 
 const Profile = () => {
   const { id } = useParams(); // get id
@@ -12,7 +13,9 @@ const Profile = () => {
   const [likesCount, setLikesCount] = useState("");
   let postsCount = listOfPosts.length;
 
-  // let navigate = useNavigate();
+  const { authState } = useContext(AuthContext);
+
+  let navigate = useNavigate();
 
   useEffect(() => {
     axios.get(`http://localhost:8800/auth/userinfo/${id}`).then((res) => {
@@ -56,6 +59,15 @@ const Profile = () => {
               <ThumbUpIcon /> {likesCount}
             </div>
           </div>
+          {authState.username === username && (
+            <button
+              onClick={() => {
+                navigate("/changepassword");
+              }}
+            >
+              change password
+            </button>
+          )}
           <Link to="/">Back →</Link>
         </div>
       </div>
