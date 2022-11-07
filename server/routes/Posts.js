@@ -43,7 +43,7 @@ router.put("/title", validateToken, async (req, res) => {
 
 router.put("/postText", validateToken, async (req, res) => {
   const { newText, id } = req.body;
-  await Posts.update({ title: newText }, { where: { id: id } });
+  await Posts.update({ postText: newText }, { where: { id: id } });
   res.json(newText);
 });
 

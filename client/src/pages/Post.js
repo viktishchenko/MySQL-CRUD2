@@ -87,8 +87,24 @@ const Post = () => {
   const editPost = (option) => {
     if (option === "title") {
       let newTitle = prompt("Enter new Title:");
+      axios.put(
+        `http://localhost:8800/posts/title`,
+        {
+          newTitle: newTitle,
+          id: id,
+        },
+        { headers: { accessToken: localStorage.getItem("accessToken") } }
+      );
     } else {
-      let newPostText = prompt("Enter new Text:");
+      let newText = prompt("Enter new Text:");
+      axios.put(
+        `http://localhost:8800/posts/postText`,
+        {
+          newText: newText,
+          id: id,
+        },
+        { headers: { accessToken: localStorage.getItem("accessToken") } }
+      );
     }
   };
 
