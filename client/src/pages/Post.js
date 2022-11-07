@@ -95,6 +95,7 @@ const Post = () => {
         },
         { headers: { accessToken: localStorage.getItem("accessToken") } }
       );
+      setPost({ ...post, title: newTitle });
     } else {
       let newText = prompt("Enter new Text:");
       axios.put(
@@ -105,6 +106,7 @@ const Post = () => {
         },
         { headers: { accessToken: localStorage.getItem("accessToken") } }
       );
+      setPost({ ...post, postText: newText });
     }
   };
 
